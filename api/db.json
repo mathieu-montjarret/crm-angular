@@ -34,7 +34,7 @@
       "tjmHt": 1200,
       "nbJours": 12,
       "tva": 20,
-      "state": "CONFIRMED",
+      "state": "CANCELED",
       "typePresta": "formation",
       "client": "Capgemini",
       "comment": "Merci capgemini pour les 14k",
@@ -58,10 +58,14 @@
       "id": 1,
       "name": "Capgemini",
       "totalCaHt": 120000,
-      "comment": "un comment pour client modis"
+      "comment": "Merci Cap pour les 24k",
+      "tjmHt": 1200,
+      "nbJours": 20,
+      "typePresta": "formation",
+      "client": "Capgemini2"
     },
     {
-      "state": "ACTIVE",
+      "state": "INACTIVE",
       "tva": 20,
       "id": 2,
       "name": "Modis",

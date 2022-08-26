@@ -17,15 +17,18 @@ export class PageListOrdersComponent implements OnInit {
   public collection$!: Observable<Order[]>;
   public headers = ['Type', 'Client', 'NbJours', 'TjmHT', 'Total HT', 'Total TTC', 'State'];
   public states = Object.values(StateOrder);
-  public changeState(item: Order, event: any): void {
-  const state = event.target.value;
-    this.ordersService.changeState(item, state).subscribe((data) => item = data);
-  }
-
   constructor(private ordersService: OrdersService) {
     this.collection$ = this.ordersService.collection
    }
+
   ngOnInit(): void {
+  }
+
+  public changeState(item: Order, e: any): void {
+    const state = e.target.value;
+    this.ordersService.changeState(item, state).subscribe((res) =>{
+      Object.assign(item, res);
+    });
   }
 }
 

@@ -1,18 +1,25 @@
 <app-template-full-width [title]="myTitle" *ngIf="collection$ | async as collection">
-  <button (click)="changeTitle()">Change title</button>
+  <!-- <button (click)="changeTitle()">Change title</button>
   <p style="background-color: red;">
 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-</p>
+</p> -->
 <app-table-light [headers]='headers'>
   <tr *ngFor="let item of collection">
     <td>{{ item.typePresta }}</td>
     <td>{{ item.client }}</td>
     <td>{{ item.nbJours }}</td>
-    <td>{{ item.tjmHt }}</td>
-    <td>{{ item | total }}</td>
-    <td>{{ item | total: true }}</td>
-    <td>{{ item.state }}</td>
+    <td>{{ item.tjmHt | currency: 'EUR' }}</td>
+    <td>{{ item | total | currency: 'EUR'}}</td>
+    <td>{{ item | total: true | currency: 'EUR'}}</td>
+    <td>
+      <select (change)="changeState(item, $event)">
+        <option *ngFor="let state of states" [value]='state' [selected]='state === item.state'>
+          {{ state }}
+        </option>
+      </select>
+    </td>
   </tr>
 </app-table-light>
 <app-btn></app-btn>
+<!-- <p>{{ collection | json }}</p> -->
 </app-template-full-width>

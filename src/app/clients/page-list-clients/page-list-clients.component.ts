@@ -10,9 +10,9 @@ import { ClientsService } from '../services/clients.service';
   styleUrls: ['./page-list-clients.component.scss']
 })
 export class PageListClientsComponent implements OnInit {
-  public myTitle = { name: 'List Clients' };
+  public myTitle = { name: 'Liste des clients' };
   public collection$!: Observable<Client[]>;
-  public headers = ['Name', 'TotalHT', 'Tva', 'TotalTTC', 'State'];
+  public headers = ['Nom', 'TotalHT', 'TVA', 'TotalTTC', 'Etat'];
   public states = Object.values(StateClient);
   constructor(private clientsService: ClientsService) {
     this.collection$ = this.clientsService.collection;

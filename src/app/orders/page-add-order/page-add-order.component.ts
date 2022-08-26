@@ -8,6 +8,7 @@ import { Order } from 'src/app/core/models/order';
 })
 export class PageAddOrderComponent implements OnInit {
   public item = new Order();
+  public myTitle = { name: 'Ajouter une commande' };
   constructor() { }
 
   ngOnInit(): void {

@@ -5,7 +5,7 @@
     <tr *ngFor="let item of collection">
       <td>{{ item.name }}</td>
       <td>{{ item.totalCaHt | currency: 'EUR' }}</td>
-      <td>{{ item.tva | currency: 'EUR' }}</td>
+      <td>{{ item.tva + " %" }}</td>
       <td>{{ item | total: true | currency: 'EUR' }}</td>
       <td [appState]="item.state">
         <select (change)="changeState(item, $event)">
@@ -15,5 +15,5 @@
     </tr>
 
   </app-table-light>
-  <app-btn label="add a client" route="add"></app-btn>
+  <app-btn label="ajouter un client" route="add"></app-btn>
 </app-template-full-width>

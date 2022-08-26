@@ -2,7 +2,7 @@ import { StateOrder } from "../enums/state-order";
 import { OrderI } from "../interfaces/order-i";
 
 export class Order implements OrderI {
-  state = StateOrder.OPTION;
+  state = StateOrder.ATTENTE;
   tva = 20;
   id!: number;
   client!: string;
